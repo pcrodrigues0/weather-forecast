@@ -1,0 +1,19 @@
+@import "../../css/styleguide.scss";    
+
+
+.main {
+  display: flex;
+  align-items: center;  
+  max-width: $desktopBreakpointMin;
+  margin: 0 auto;
+  padding: 120px 0 0 0;
+  flex-direction: column;
+  @include fadeIn;
+
+
+  @media screen and (max-width: $desktopBreakpointMin) {
+    margin: 0;
+    padding: 100px 30px 0 30px;
+    
+  }
+}

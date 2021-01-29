@@ -1,0 +1,80 @@
+$fontBlack: hsl(0, 0%, 10%);
+$fontWhite: hsla(0, 0%, 100%, 0.7);
+$background: linear-gradient(180deg, #a7bfe8 0%, #6190e8 100%);
+$backgroundCold: linear-gradient(180deg, #a7bfe8 0%, #6190e8 100%);
+$backgroundWarm: linear-gradient(90deg, rgba(229,229,237,1) 1%, rgba(232,66,6,1) 97%);
+$backgroundSnow: linear-gradient(90deg, rgba(229,229,237,1) 1%, rgba(56,162,184,1) 97%);
+$secondaryOpacity: hsla(0, 0%, 75%, 0.7);
+
+$fontSmall: 16px;
+$fontMedium: 18px;
+$fontLarge: 20px;
+$fontXL: 28px;
+$fontXXL: 36px;
+$fontXXXL: 72px;
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("../fonts/DMSans-Regular.ttf");
+}
+@font-face {
+  font-family: "DM Sans-Bold";
+  src: url("../fonts/DMSans-Bold.ttf");
+}
+$fontMain: DM Sans, helvetica;
+$fontBold: DM Sans-Bold, helvetica;
+
+$mobileBreakpointMin: 320px;
+$mobileBreakpointMax: 767px;
+$tabletBreakpointMin: 768px;
+$tabletBreakpointMax: 1023px;
+$desktopBreakpointMin: 1024px;
+
+$formPadding: 10px;
+$layoutPadding: 120px;
+$textShadow: 0 2px 15px hsla(0, 0%, 0%, 0.2);
+$border: 3px solid $fontBlack;
+$headerHeight: 66px;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromBottom {
+  from {
+    transform: translate(0, 2000px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+$hoverTransitionDuration: 0.9s;
+@mixin fadeIn {
+  animation: fadeIn 1s;
+}
+@mixin slideFromBottom {
+  animation: slideFromBottom 1s;
+}
+
+@mixin loader {
+  border: 3px solid $fontBlack;
+  border-top: 3px solid $secondaryOpacity;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite, fadeIn 1s;
+}
